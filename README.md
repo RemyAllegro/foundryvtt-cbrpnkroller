@@ -1,6 +1,6 @@
-# Forged in the Dark Roller
+# CBR+PNK Roller
 
-A generic dice roller for Forged in the Dark games in FoundryVTT, based on code by Megastruktur
+A dice roller for CBR+PNK in FoundryVTT, based on code by Megastruktur and drewg13
 
 ## Usage
 

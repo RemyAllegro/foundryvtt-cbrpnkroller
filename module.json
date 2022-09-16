@@ -1,8 +1,8 @@
 {
-  "name": "foundryvtt-fitdroller",
-  "id": "foundryvtt-fitdroller",
-  "title": "Forged in the Dark Roller",
-  "description": "Provides a generic Dice Roller for Forged in the Dark games",
+  "name": "foundryvtt-cbrpnkroller",
+  "id": "foundryvtt-cbrpnkroller",
+  "title": "CBR+PNK Roller",
+  "description": "Provides a Dice Roller for CBR+PNK by Emanoel Melo",
   "author": "megastruktur, Andrew Garinger (agaringer#6498), Mestre Digital, Gus",
   "authors": [
     {"name": "megastruktur"},
@@ -10,17 +10,17 @@
     {"name": "Mestre Digital"},
     {"name": "Gus"}
   ],
-  "version": "1.6.2",
+  "version": "1.6.3",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "10.284",
   "compatibility": {
     "minimum": "0.7.5",
     "verified": "10.284"
   },
-  "url": "https://github.com/drewg13/foundryvtt-fitdroller",
-  "manifest": "https://raw.githubusercontent.com/drewg13/foundryvtt-fitdroller/main/module.json",
-  "download": "https://github.com/drewg13/foundryvtt-fitdroller/archive/v1.6.2.zip",
-  "bugs": "https://github.com/drewg13/foundryvtt-fitdroller/issues",
+  "url": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/",
+  "manifest": "https://raw.githubusercontent.com/RemyAllegro/foundryvtt-cbrpnkroller/main/module.json",
+  "download": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/archive/refs/heads/main.zip",
+  "bugs": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/pulls",
   "styles": ["styles/fitdroller.css"],
   "esmodules": ["scripts/main.js"],
   "languages": [
@@ -28,16 +28,6 @@
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
-    },
-    {
-      "lang": "es",
-      "name": "Español",
-      "path": "lang/es.json"
-    },
-    {
-      "lang": "pt-BR",
-      "name": "Português (Brasil)",
-      "path": "lang/pt-BR.json"
     }
   ]
 }
