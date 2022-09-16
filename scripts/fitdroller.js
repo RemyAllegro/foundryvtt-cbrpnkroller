@@ -41,7 +41,7 @@ export default class Roller {
                 <option value="controlled">${ game.i18n.localize( 'FitDRoller.PositionControlled' ) }</option>
                 <option value="risky">${ game.i18n.localize( 'FitDRoller.PositionRisky' ) }</option>
                 <option value="desperate">${ game.i18n.localize( 'FitDRoller.PositionDesperate' ) }</option>
-				<option value="pos4">${ game.i18n.localize( '"FitDRoller.Position4"' ) }</option>
+				<option value="pos4">${ game.i18n.localize( 'FitDRoller.Position4' ) }</option>
               </select>
               <script>
                 $('#pos option[value="' + game.fitdroller.defaultPosition + '"]').prop("selected", "selected");
