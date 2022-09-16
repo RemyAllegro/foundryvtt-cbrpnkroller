@@ -36,3 +36,5 @@ If you want to make a Fortune roll (no position or effect), set the `attribute` 
 You can also trigger the Dialog using `game.fitdroller.FitDRollerPopup()`
 
 Based on concepts from Blades in the Dark (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
+
+mannifest url: https://raw.githubusercontent.com/RemyAllegro/foundryvtt-cbrpnkroller/main/module.json 

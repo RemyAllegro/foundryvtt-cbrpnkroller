@@ -17,10 +17,6 @@
   <div class="die {{roll_status}}">{{localize "FitDRoller.RollCriticalSuccess"}}</div>
   <div class="description">
     <p>{{{localize "FitDRoller.RollDoWithIncreasedEffect"}}}</p>
-
-	{{#if (eq position "desperate")}}
-	<p>{{{localize "FitDRoller.RollXP"}}}</p>
-	{{/if}}
   </div>
   {{/if}}
 
@@ -28,10 +24,6 @@
   <div class="die {{roll_status}}">{{localize "FitDRoller.RollSuccess"}}</div>
   <div class="description">
     <p>{{{localize "FitDRoller.RollDo"}}}</p>
-
-	{{#if (eq position "desperate")}}
-	<p>{{{localize "FitDRoller.RollXP"}}}</p>
-	{{/if}}
   </div>
   {{/if}}
 
@@ -47,9 +39,6 @@
       {{{localize "FitDRoller.RollPartialSuccessPosition"}}}
       {{/if}}
     </p>
-	{{#if (eq position "desperate")}}
-	<p>{{{localize "FitDRoller.RollXP"}}}</p>
-	{{/if}}
   </div>
   {{/if}}
 
@@ -65,9 +54,6 @@
       {{{localize "FitDRoller.RollFailurePositionDesperate"}}}
       {{/if}}
     </p>
-	{{#if (eq position "desperate")}}
-	<p>{{{localize "FitDRoller.RollXP"}}}</p>
-	{{/if}}
   </div>
   {{/if}}
 
