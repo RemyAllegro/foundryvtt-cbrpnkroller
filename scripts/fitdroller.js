@@ -4,7 +4,7 @@ export default class Roller {
   * @return none
   */
   constructor() {
-    this.moduleName = "foundryvtt-fitdroller";
+    this.moduleName = "foundryvtt-cbrpnkroller";
     this.defaultDice = game.settings.get( this.moduleName, "defaultDiceCount");
     this.defaultPosition = game.settings.get( this.moduleName, "defaultPosition");
     this.defaultEffect = game.settings.get( this.moduleName, "defaultEffect");
@@ -255,7 +255,7 @@ export default class Roller {
 
     if( effect === "zero" ){ roll_status = "zero"; }
 
-    let color = game.settings.get("foundryvtt-fitdroller", "backgroundColor");
+    let color = game.settings.get(this.moduleName, "backgroundColor");
 
     let position_localize = '';
     switch (position){
