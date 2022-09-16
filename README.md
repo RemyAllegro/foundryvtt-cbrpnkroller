@@ -35,12 +35,4 @@ If you want to make a Fortune roll (no position or effect), set the `attribute` 
 
 You can also trigger the Dialog using `game.fitdroller.FitDRollerPopup()`
 
-## New GUI
-
-A new GUI has been contributed by Mestre Digital and Gus, allowing for rolls with fewer clicks.<br>
-
-![img.png](img.png)
-
-Select your number of dice, then click the Fortune Roll button or the dice icon at the intersection of your desired Position and Effect
-
 Based on concepts from Blades in the Dark (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).

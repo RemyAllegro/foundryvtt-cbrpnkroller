@@ -13,7 +13,7 @@ export default class Roller {
   async FitDRollerPopup() {
 
     const maxDice = game.settings.get( this.moduleName, "maxDiceCount" );
-    const newInterface = game.settings.get( this.moduleName, "newInterface" );
+    const newInterface = false //game.settings.get( this.moduleName, "newInterface" ); //force disable the new interface
 
     if( !newInterface ) {
       new Dialog( {

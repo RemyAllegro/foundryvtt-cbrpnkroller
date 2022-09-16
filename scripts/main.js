@@ -1,5 +1,5 @@
 import Roller from "./fitdroller.js";
-const moduleName = "foundryvtt-fitdroller";
+const moduleName = "foundryvtt-cbrpnkroller";
 
 Hooks.once("ready", () => {
 
@@ -83,7 +83,7 @@ Hooks.once("init", () => {
     "default": "standard",
     "onChange": function(){ game.fitdroller = new Roller(); }
   });
-
+/* Disable new interface for now
   game.settings.register( moduleName, "newInterface", {
     "name": game.i18n.localize("FitDRoller.newInterface"),
     "hint": game.i18n.localize("FitDRoller.newInterfaceHint"),
@@ -92,7 +92,7 @@ Hooks.once("init", () => {
     "default": false,
     "type": Boolean
   });
-
+*/
   game.keybindings.register( moduleName, "FitDRollerShortcut", {
     name: game.i18n.localize("FitDRoller.FitDRollerShortcutName"),
     hint: game.i18n.localize("FitDRoller.FitDRollerShortcutHint"),
@@ -109,4 +109,4 @@ Hooks.once("init", () => {
   game.fitdroller = new Roller();
 });
 
-console.log("FitDRoller | Forged in the Dark Dice Roller loaded");
+console.log("CBR+PNK | CBR+PNK Roller loaded");

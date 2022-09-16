@@ -3,15 +3,15 @@
   "FitDRoller.Cancel": "Cancel",
   "FitDRoller.Close": "Close",
   "FitDRoller.Dice": "Dice",
-  "FitDRoller.RollTitle": "Forged in the Dark Roller",
-  "FitDRoller.RollTokenDescription": "Choose your dice pool. Choose your position. Choose your effect.",
-  "FitDRoller.TablePosEffect": "Position and Effect Table",
+  "FitDRoller.RollTitle": "CBR+PNK Roller",
+  "FitDRoller.RollTokenDescription": "Choose your dice pool. Choose your threat. Choose your effect.",
+  "FitDRoller.TablePosEffect": "Threat and Effect Table",
   "FitDRoller.RollNumberOfDice": "Number of Dice",
   "FitDRoller.FortuneRoll": "Fortune Roll",
   "FitDRoller.Fortune": "Fortune",
   "FitDRoller.Action": "Action",
 
-  "FitDRoller.Position": "Position",
+  "FitDRoller.Position": "Threat",
   "FitDRoller.Effect": "Effect",
   "FitDRoller.Modifier": "Modifier",
 
@@ -67,8 +67,8 @@
   "FitDRoller.backgroundColorGray": "gray",
   "FitDRoller.backgroundColorBlack": "black",
 
-  "FitDRoller.FitDRollerShortcutName": "Forged in the Dark Roller",
-  "FitDRoller.FitDRollerShortcutHint": "This will trigger Forged in the Dark Roller.",
+  "FitDRoller.FitDRollerShortcutName": "CBR+PNK Roller",
+  "FitDRoller.FitDRollerShortcutHint": "This will trigger CBR+PNK Roller.",
 
   "FitDRoller.FitDRollerRollOverText": "Roll",
 
