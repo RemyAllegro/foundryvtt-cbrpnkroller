@@ -37,9 +37,11 @@ export default class Roller {
             <div class="form-group">
               <label>${ game.i18n.localize( 'FitDRoller.Position' ) }:</label>
               <select id="pos" name="pos">
+				<option value="pos0">${ game.i18n.localize( 'FitDRoller.Position0' ) }</option>
                 <option value="controlled">${ game.i18n.localize( 'FitDRoller.PositionControlled' ) }</option>
                 <option value="risky">${ game.i18n.localize( 'FitDRoller.PositionRisky' ) }</option>
                 <option value="desperate">${ game.i18n.localize( 'FitDRoller.PositionDesperate' ) }</option>
+				<option value="pos4">${ game.i18n.localize( '"FitDRoller.Position4"' ) }</option>
               </select>
               <script>
                 $('#pos option[value="' + game.fitdroller.defaultPosition + '"]').prop("selected", "selected");
@@ -259,11 +261,17 @@ export default class Roller {
 
     let position_localize = '';
     switch (position){
-      case 'controlled':
+      case 'pos0':
+        position_localize = 'FitDRoller.Position0';
+        break;
+	  case 'controlled':
         position_localize = 'FitDRoller.PositionControlled';
         break;
       case 'desperate':
         position_localize = 'FitDRoller.PositionDesperate';
+        break;
+	  case 'pos4':
+        position_localize = 'FitDRoller.Position4';
         break;
       case 'risky':
       default:
