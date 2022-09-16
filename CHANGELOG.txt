@@ -25,3 +25,5 @@
 1.6.2  Additional V10 fixes, new interface fixes, Roll Purpose field label correction
 
 1.6.3  Forked
+
+1.6.4  Updated for CBR+PNK

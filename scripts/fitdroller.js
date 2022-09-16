@@ -373,7 +373,7 @@ export default class Roller {
 
     // 1,2,3 = failure
     if (use_die <= 3) {
-      roll_status = "zero";
+      roll_status = "poor";
     } else if (use_die === 6) {
       // 6,6 - critical success
       if (prev_use_die && prev_use_die === 6) {

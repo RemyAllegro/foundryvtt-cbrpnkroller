@@ -30,30 +30,14 @@
   {{#if (eq roll_status "partial-success")}}
   <div class="die {{roll_status}}">{{localize "FitDRoller.RollPartialSuccess"}}</div>
   <div class="description">
-    <p>
-      {{#if (eq position "controlled")}}
-      {{{localize "FitDRoller.RollPartialSuccessPositionControlled"}}}
-      {{else if (eq position "risky")}}
-      {{{localize "FitDRoller.RollPartialSuccessPositionRisky"}}}
-      {{else}}
-      {{{localize "FitDRoller.RollPartialSuccessPosition"}}}
-      {{/if}}
-    </p>
+    <p>{{{localize "FitDRoller.RollPartial"}}}</p>
   </div>
   {{/if}}
 
   {{#if (eq roll_status "failure")}}
   <div class="die {{roll_status}}">{{localize "FitDRoller.RollFailure"}}</div>
   <div class="description">
-    <p>
-      {{#if (eq position "controlled")}}
-      {{{localize "FitDRoller.RollFailurePositionControlled"}}}
-      {{else if (eq position "risky")}}
-      {{{localize "FitDRoller.RollFailurePositionRisky"}}}
-      {{else}}
-      {{{localize "FitDRoller.RollFailurePositionDesperate"}}}
-      {{/if}}
-    </p>
+    <p>{{{localize "FitDRoller.RollFail"}}}</p>
   </div>
   {{/if}}
 
@@ -80,6 +64,15 @@
   <div class="description">
     <p>
       {{{localize "FitDRoller.RollLimitedEffectDescription"}}}
+    </p>
+  </div>
+  {{/if}}
+
+  {{#if (eq roll_status "poor")}}
+  <div class="die {{roll_status}}">{{localize "FitDRoller.RollPoorEffect"}}</div>
+  <div class="description">
+    <p>
+      {{{localize "FitDRoller.RollPoorEffectDescription"}}}
     </p>
   </div>
   {{/if}}

@@ -11,7 +11,7 @@
     {"name": "Gus"},
 	{"name": "Remy"}
   ],
-  "version": "1.6.3",
+  "version": "1.6.4",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "10.284",
   "compatibility": {
