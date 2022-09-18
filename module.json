@@ -11,12 +11,12 @@
     {"name": "Gus"},
 	{"name": "Remy"}
   ],
-  "version": "1.6.4",
+  "version": "1.6.5",
   "minimumCoreVersion": "0.7.5",
-  "compatibleCoreVersion": "10.284",
+  "compatibleCoreVersion": "9.280",
   "compatibility": {
     "minimum": "0.7.5",
-    "verified": "10.284"
+    "verified": "9.280"
   },
   "url": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/",
   "manifest": "https://raw.githubusercontent.com/RemyAllegro/foundryvtt-cbrpnkroller/main/module.json",

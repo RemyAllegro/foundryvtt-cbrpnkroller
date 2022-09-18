@@ -37,14 +37,6 @@
   "FitDRoller.RollPartial": "You do it but also suffer a Consequence: harm, reduced Effect, lost  opportunity or complication.",
   "FitDRoller.RollFail": "Things go bad and you suffer the Consequences.",
   
-  "FitDRoller.RollPartialSuccessPositionControlled": "You hesitate. Withdraw and try a different approach, or else do it with a minor consequence: a <strong>minor complication</strong> occurs, you have <strong>reduced effect</strong>, you suffer <strong>lesser harm</strong>, you end up in a <strong>risky</strong> position.",
-  "FitDRoller.RollPartialSuccessPositionRisky": "You do it, but there’s a consequence: you suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you end up in a <strong>desperate</strong> position.",
-  "FitDRoller.RollPartialSuccessPosition": "You do it, but there’s a consequence: you suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you have <strong>reduced effect</strong>.",
-  "FitDRoller.RollFailurePositionControlled": "You falter. Press on by seizing a <strong>risky</strong> opportunity, or <strong>withdraw</strong> and try a different approach.",
-  "FitDRoller.RollFailurePositionRisky": "Things go badly. You suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you end up in a <strong>desperate</strong> position, you <strong>lose this opportunity</strong> for action.",
-  "FitDRoller.RollFailurePositionDesperate": "It’s the worst outcome. You suffer <strong>severe harm</strong>, a <strong>serious complication occurs</strong>, you <strong>lose this opportunity</strong> for action.",
-
-  "FitDRoller.RollXP": "",
   "FitDRoller.RollZeromode": "Zero Dice rolled - rolling two dice and taking the lowest",
 
   "FitDRoller.RollGreatEffect": "Crit",

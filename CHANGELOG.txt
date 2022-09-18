@@ -27,3 +27,5 @@
 1.6.3  Forked
 
 1.6.4  Updated for CBR+PNK
+
+1.6.5  Removed extraneous language lines
