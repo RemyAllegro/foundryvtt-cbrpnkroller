@@ -59,9 +59,11 @@ Hooks.once("init", () => {
     "config": true,
     "type": String,
     "choices": {
+	  "pos0":game.i18n.localize("FitDRoller.Position0"),
       "controlled": game.i18n.localize("FitDRoller.PositionControlled"),
       "risky": game.i18n.localize("FitDRoller.PositionRisky"),
-      "desperate": game.i18n.localize("FitDRoller.PositionDesperate")
+      "desperate": game.i18n.localize("FitDRoller.PositionDesperate"),
+	  "pos4": game.i18n.localize("FitDRoller.Position4")
     },
     "default": "risky",
     "onChange": function(){ game.fitdroller = new Roller(); }
@@ -74,11 +76,11 @@ Hooks.once("init", () => {
     "config": true,
     "type": String,
     "choices": {
-      "extreme": game.i18n.localize("FitDRoller.EffectExtreme"),
-      "great": game.i18n.localize("FitDRoller.EffectGreat"),
-      "standard": game.i18n.localize("FitDRoller.EffectStandard"),
+	  "zero": game.i18n.localize("FitDRoller.EffectZero"),
       "limited": game.i18n.localize("FitDRoller.EffectLimited"),
-      "zero": game.i18n.localize("FitDRoller.EffectZero"),
+      "standard": game.i18n.localize("FitDRoller.EffectStandard"),
+      "great": game.i18n.localize("FitDRoller.EffectGreat"),
+      "extreme": game.i18n.localize("FitDRoller.EffectExtreme"),
     },
     "default": "standard",
     "onChange": function(){ game.fitdroller = new Roller(); }

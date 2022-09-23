@@ -32,9 +32,9 @@
   "FitDRoller.RollSuccess": "Success",
   "FitDRoller.RollPartialSuccess": "Partial Success",
 
-  "FitDRoller.RollDoWithIncreasedEffect": "You succeed and gain an extra benefit, most likely <strong>increased effect</strong>.",
+  "FitDRoller.RollDoWithIncreasedEffect": "You succeed and gain an extra benefit (<strong>increased effect</strong>, uncover a secret, improved position, pinpoint a bounty).",
   "FitDRoller.RollDo": "It goes as well as intended.",
-  "FitDRoller.RollPartial": "You do it but also suffer a Consequence: harm, reduced Effect, lost  opportunity or complication.",
+  "FitDRoller.RollPartial": "You do it but it comes with a <strong>Consequence</strong>.",
   "FitDRoller.RollFail": "Things go bad and you suffer the Consequences.",
   
   "FitDRoller.RollZeromode": "Zero Dice rolled - rolling two dice and taking the lowest",
@@ -49,12 +49,12 @@
   "FitDRoller.RollPoorEffectDescription": "You get a bad result or little effect.",
   
   "FitDRoller.RollZeroEffect": "Zero Effect",
-  "FitDRoller.RollZeroEffectDescription": "You get a terrible result or zero effect.<br><br>If you're marking faction or healing clocks, mark <strong>0</strong> segments.",
+  "FitDRoller.RollZeroEffectDescription": "You get a terrible result or zero effect.",
   "FitDRoller.RollExtremeEffect": "Extreme Effect!",
-  "FitDRoller.RollExtremeEffectDescription": "You get an exceptional result or an extreme effect.<br><br>If this is an engagement roll, you may have already overcome multiple obstacles and are in a <strong>controlled</strong> position for whatever is next.<br><br>If you're marking faction or healing clocks, mark <strong>5</strong> segments.",
+  "FitDRoller.RollExtremeEffectDescription": "You get an exceptional result or an extreme effect.",
 
   "FitDRoller.maxDiceCountName": "Maximum Dice In a Roll",
-  "FitDRoller.maxDiceCountHint": "The maximum number of dice available in the popup (if this is greater than 6 and you're using the New Interface, it will be defaulted to 6)",
+  "FitDRoller.maxDiceCountHint": "The maximum number of dice available in the popup",
   "FitDRoller.defaultDiceCountName": "Default Number of Dice to Roll",
   "FitDRoller.defaultDiceCountHint": "The number of dice that will start selected in the popup",
   "FitDRoller.defaultPositionName": "Default Threat",
