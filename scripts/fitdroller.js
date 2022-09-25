@@ -6,6 +6,7 @@ export default class Roller {
   constructor() {
     this.moduleName = "foundryvtt-cbrpnkroller";
     this.defaultDice = game.settings.get( this.moduleName, "defaultDiceCount");
+	this.defaultGlitch = game.settings.get( this.moduleName, "defaultGlitchDice");
     this.defaultPosition = game.settings.get( this.moduleName, "defaultPosition");
     this.defaultEffect = game.settings.get( this.moduleName, "defaultEffect");
   }
@@ -31,7 +32,16 @@ export default class Roller {
                 ${ Array( maxDice + 1 ).fill().map( ( item, i ) => `<option value="${ i }">${ i }d</option>` ).join( '' ) }
               </select>
               <script>
-                $('#dice option[value="' + game.fitdroller.defaultDice + '"]').prop("selected", "selected");
+                $('#dice option[value="' + game.cpnkroller.defaultDice + '"]').prop("selected", "selected");
+              </script>
+            </div>
+			<div class="form-group">
+              <label>${ game.i18n.localize( 'FitDRoller.RollNumberOfGlitchDice' ) }:</label>
+              <select id="glitch" name="glitch">
+                ${ Array( maxDice + 1 ).fill().map( ( item, i ) => `<option value="${ i }">${ i }d</option>` ).join( '' ) }
+              </select>
+              <script>
+                $('#glitch option[value="' + game.cpnkroller.defaultGlitch + '"]').prop("selected", "selected");
               </script>
             </div>
             <div class="form-group">
@@ -44,7 +54,7 @@ export default class Roller {
 				<option value="pos4">${ game.i18n.localize( 'FitDRoller.Position4' ) }</option>
               </select>
               <script>
-                $('#pos option[value="' + game.fitdroller.defaultPosition + '"]').prop("selected", "selected");
+                $('#pos option[value="' + game.cpnkroller.defaultPosition + '"]').prop("selected", "selected");
               </script>
             </div>
             <div class="form-group">
@@ -56,7 +66,7 @@ export default class Roller {
                 <option value="great">${ game.i18n.localize( 'FitDRoller.EffectGreat' ) }</option>
                 <option value="extreme">${ game.i18n.localize( 'FitDRoller.EffectExtreme' ) }</option>
               </select>
-              <script>$('#fx option[value="' + game.fitdroller.defaultEffect + '"]').prop("selected", "selected");</script>
+              <script>$('#fx option[value="' + game.cpnkroller.defaultEffect + '"]').prop("selected", "selected");</script>
             </div>
           </form>
         `,
@@ -66,10 +76,11 @@ export default class Roller {
             label: game.i18n.localize( 'FitDRoller.Action' ),
             callback: async( html ) => {
               const dice_amount = parseInt( html.find( '[name="dice"]' )[0].value );
+			  const glitch_amount = parseInt( html.find( '[name="glitch"]' )[0].value );
               const position = html.find( '[name="pos"]' )[0].value;
               const effect = html.find( '[name="fx"]' )[0].value;
               const purpose = html.find( '[name="purpose"]' )[0].value;
-              await this.FitDRoller( "", dice_amount, position, effect, purpose );
+              await this.FitDRoller( "", dice_amount, position, effect, purpose, glitch_amount );
             }
           },
           fortune: {
@@ -77,8 +88,9 @@ export default class Roller {
             label: game.i18n.localize( 'FitDRoller.Fortune' ),
             callback: async( html ) => {
               const dice_amount = parseInt( html.find( '[name="dice"]' )[0].value );
-              const purpose = html.find( '[name="purpose"]' )[0].value;
-              await this.FitDRoller( "fortune", dice_amount, "", "", purpose );
+              const glitch_amount = parseInt( html.find( '[name="glitch"]' )[0].value );
+			  const purpose = html.find( '[name="purpose"]' )[0].value;
+              await this.FitDRoller( "fortune", dice_amount, "", "", purpose, glitch_amount );
             }
           },
           no: {
@@ -88,7 +100,7 @@ export default class Roller {
         },
         default: "action",
       } ).render( true );
-    } else {
+    } /* else {
       let htmlContent = await renderTemplate( "modules/" + this.moduleName + "/templates/roll-dialog.html", {} );
       // hacky as hell, but using jQuery in the html doesn't change with the setting
       let dice = this.defaultDice > 6 ? 6 : this.defaultDice;
@@ -181,7 +193,7 @@ export default class Roller {
           } )
         }
       } ).render( true );
-    }
+    } */
   }
 
 
@@ -192,8 +204,9 @@ export default class Roller {
    * @param {string} position position
    * @param {string} effect effect
    * @param {string} purpose purpose
+   * @param {int} glitch number of glitch dice
    */
-  async FitDRoller( attribute = "", dice_amount = this.defaultDice, position = this.defaultPosition, effect = this.defaultEffect, purpose = "" ){
+  async FitDRoller( attribute = "", dice_amount = this.defaultDice, position = this.defaultPosition, effect = this.defaultEffect, purpose = "", glitch=this.defaultGlitch ){
     let versionParts;
     if( game.version ) {
       versionParts = game.version.split( '.' );
@@ -216,7 +229,7 @@ export default class Roller {
     } else {
       r.roll();
     }
-    return await this.showChatRollMessage( r, zeromode, attribute, position, effect, purpose );
+    return await this.showChatRollMessage( r, zeromode, attribute, position, effect, purpose, glitch );
   }
 
   /**
@@ -228,8 +241,9 @@ export default class Roller {
    * @param {string} position position
    * @param {string} effect effect
    * @param {string} purpose purpose
+   * @param {int} glitch number of glitch dice
    */
-  async showChatRollMessage(r, zeromode, attribute = "", position = "", effect = "", purpose = "") {
+  async showChatRollMessage(r, zeromode, attribute = "", position = "", effect = "", purpose = "", glitch = 0) {
     let versionParts;
     if( game.version ) {
       versionParts = game.version.split( '.' );
@@ -256,6 +270,10 @@ export default class Roller {
     }
 
     if( effect === "zero" ){ roll_status = "zero"; }
+	
+	// Retrieve glitch result
+	let glitch_status;
+	glitch_status = this.getGlitchStatus(rolls, glitch);
 
     let color = game.settings.get(this.moduleName, "backgroundColor");
 
@@ -298,7 +316,7 @@ export default class Roller {
         effect_localize = 'FitDRoller.EffectStandard';
     }
 
-    const result = await renderTemplate("modules/" + this.moduleName + "/templates/fitd-roll.html", { rolls, roll_status, attribute, position, position_localize, effect, effect_localize, zeromode, color, purpose });
+    const result = await renderTemplate("modules/" + this.moduleName + "/templates/fitd-roll.html", { rolls, roll_status, attribute, position, position_localize, effect, effect_localize, zeromode, color, purpose, glitch_status});
 
     const messageData = {
       speaker,
@@ -395,4 +413,44 @@ export default class Roller {
 
     return roll_status;
   }
+
+  /**
+   *  Get glitch result of the Roll.
+   *  - no-resist
+   *  - resist
+   *  - empty string signifies no glitch
+   * @param {Array} rolls results of dice rolls
+   * @param {int} glitchDice number of glitch dice
+   * @returns {string} glitch status of roll
+   */
+  getGlitchStatus(rolls, glitchDice = 0) {
+	let glitch_rolls = [];
+	let glitch_status = "";
+	if (glitchDice <= 0){
+		glitch_status = "";
+		return glitch_status;
+	} else if (glitchDice >= rolls.length){
+		glitch_rolls = rolls.slice();
+	} else {
+		glitch_rolls = rolls.slice(-glitchDice); //always look at the last dice for glitches
+	}
+	
+    let sorted_rolls = [];
+    // Sort glitch values from lowest to highest.
+    sorted_rolls = glitch_rolls.map((i) => i.result).sort();
+    
+    let use_die;
+	use_die = sorted_rolls[0]; //take worst result
+	
+	if (use_die <= 3){
+		glitch_status = "no-resist";
+	} else if (use_die === 6){
+		glitch_status = "";
+	} else {
+		glitch_status = "resist";
+	}
+    return glitch_status;
+  }
+
 }
+

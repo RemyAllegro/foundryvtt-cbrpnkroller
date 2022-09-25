@@ -9,7 +9,7 @@ Hooks.once("ready", () => {
 Hooks.on("renderSceneControls", (app, html) => {
   const dice_roller = $('<li class="scene-control" title="CBR+PNK Roller"><svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 72.18 72.18"><polygon points="45.81 22.51 46.72 24.21 46.72 47.97 45.77 49.72 56.07 49.72 56.92 47.87 56.92 24.36 55.97 22.51 45.81 22.51" fill="f0f0e0"/><path d="M-235.33,12.83h-62a5.07,5.07,0,0,0-5.07,5.06V79.94A5.07,5.07,0,0,0-297.38,85h62a5.06,5.06,0,0,0,5.06-5.07v-62A5.06,5.06,0,0,0-235.33,12.83Zm-34.15,25.66-5.45-3.15H-285l.9,1.7v7.85h3.4l5.9-3.35v12.6l-5.95-3.3h-3.35v11.9l3.1,5.71h-14.31l3.1-5.71V34.89l-3.1-5.5h25.86Zm32.1,24-3.05,5.91h-26.5l3.1-5.36V34.89l-3.1-5.5h26.5l3.05,5.9Z" transform="translate(302.45 -12.83)" fill="f0f0e0"/></svg></li>');
   dice_roller.on( "click", async function() {
-    await game.fitdroller.FitDRollerPopup();
+    await game.cpnkroller.FitDRollerPopup();
   })
   if( isNewerVersion( game.version, '9.220' ) ) {
     html.children().first().append( dice_roller );
@@ -49,7 +49,17 @@ Hooks.once("init", () => {
     "config": true,
     "default": 2,
     "type": Number,
-    "onChange": function(){ game.fitdroller = new Roller(); }
+    "onChange": function(){ game.cpnkroller = new Roller(); }
+  });
+
+  game.settings.register( moduleName, "defaultGlitchDice", {
+    "name": game.i18n.localize("FitDRoller.defaultGlitchDiceName"),
+    "hint": game.i18n.localize("FitDRoller.defaultGlitchDiceHint"),
+    "scope": "world",
+    "config": true,
+    "default": 0,
+    "type": Number,
+    "onChange": function(){ game.cpnkroller = new Roller(); }
   });
 
   game.settings.register( moduleName, "defaultPosition", {
@@ -66,7 +76,7 @@ Hooks.once("init", () => {
 	  "pos4": game.i18n.localize("FitDRoller.Position4")
     },
     "default": "risky",
-    "onChange": function(){ game.fitdroller = new Roller(); }
+    "onChange": function(){ game.cpnkroller = new Roller(); }
   });
 
   game.settings.register( moduleName, "defaultEffect", {
@@ -83,7 +93,7 @@ Hooks.once("init", () => {
       "extreme": game.i18n.localize("FitDRoller.EffectExtreme"),
     },
     "default": "standard",
-    "onChange": function(){ game.fitdroller = new Roller(); }
+    "onChange": function(){ game.cpnkroller = new Roller(); }
   });
 /* Disable new interface for now
   game.settings.register( moduleName, "newInterface", {
@@ -100,7 +110,7 @@ Hooks.once("init", () => {
     hint: game.i18n.localize("FitDRoller.FitDRollerShortcutHint"),
     editable: [{ key: "KeyR", modifiers: []}],
     onDown: async () => {
-      await game.fitdroller.FitDRollerPopup();
+      await game.cpnkroller.FitDRollerPopup();
     },
     onUp: () => {},
     restricted: false,
@@ -108,7 +118,7 @@ Hooks.once("init", () => {
     precedence: CONST.KEYBINDING_PRECEDENCE.NORMAL
   });
 
-  game.fitdroller = new Roller();
+  game.cpnkroller = new Roller();
 });
 
 console.log("CBR+PNK | CBR+PNK Roller loaded");
