@@ -5,7 +5,7 @@ A dice roller for CBR+PNK in FoundryVTT, based on code by Megastruktur and drewg
 ## Usage
 
 Use the FD icon at the bottom of the taskbar.<br>
-Pick your dice pool, position, and effect, then roll.<br>
+Pick your dice pool, glitch count, threat, and effect, then roll.<br>
 
 OR
 
@@ -16,22 +16,12 @@ Use the shortcut key to bring up the dialog, set to 'R' by default.
 There are module settings for controlling:<br>
 - the max number of dice<br>
 - the default number of dice initially selected<br>
-- the default position initially selected<br>
+- the default number of dice to set as glitchy<br>
+- the default threat initially selected<br>
 - the default effect initially selected<br>
-- the new GUI interface (per user setting)<br>
+- the new GUI interface (currently disabled)<br>
 
 ## Macro usage
-
-You can now set up macros and skip the popup UI altogether (Thanks to Thune#3566 for this idea and the idea for the entire module!)<br>
-
-`game.cpnkroller.FitDRoller("attribute", dice, "position", "effect")<br>`
-
-`attribute` = can be any string (defaults to "")<br>
-`dice` = total number of dice to roll (defaults to 0)<br>
-`position` = either controlled, risky, or desperate (defaults to risky if you enter anything else)<br>
-`effect` = either great, standard, or limited (defaults to standard if you enter anything else)<br>
-
-If you want to make a Fortune roll (no position or effect), set the `attribute` to fortune.
 
 You can also trigger the Dialog using `game.cpnkroller.FitDRollerPopup()`
 

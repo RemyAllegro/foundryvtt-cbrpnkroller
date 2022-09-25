@@ -186,6 +186,13 @@
   position: absolute;
   z-index: 9999;
 }
+* .fitd-die-tooltip .glitch {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: large;
+  margin-top: 10px;
+  color: red;
+}
 * .fitd-die-tooltip .tooltip:hover .tooltiptext {
   visibility: visible;
 }

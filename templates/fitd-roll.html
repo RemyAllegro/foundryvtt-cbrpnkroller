@@ -86,8 +86,13 @@
   </div>
   {{/if}}
   
-  {{#if (glitch_status)}}
-  <div>{{localize "FitDRoller.Glitch"}}</div>
+  {{#if glitch_status}}
+  <div class="glitch">{{localize "FitDRoller.Glitch"}}</div>
+  <div class="description">
+    <p>
+      {{#if (eq glitch_status "no-resist")}} {{{localize "FitDRoller.GlitchNoResist"}}} {{else}} {{{localize "FitDRoller.GlitchResist"}}} {{/if}}
+    </p>
+  </div>
   {{/if}}
 
   <ol class="dice-rolls">

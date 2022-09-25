@@ -76,10 +76,11 @@ export default class Roller {
             label: game.i18n.localize( 'FitDRoller.Action' ),
             callback: async( html ) => {
               const dice_amount = parseInt( html.find( '[name="dice"]' )[0].value );
+			  const glitch_amount = parseInt( html.find( '[name="glitch"]' )[0].value );
               const position = html.find( '[name="pos"]' )[0].value;
               const effect = html.find( '[name="fx"]' )[0].value;
               const purpose = html.find( '[name="purpose"]' )[0].value;
-              await this.FitDRoller( "", dice_amount, position, effect, purpose );
+              await this.FitDRoller( "", dice_amount, position, effect, purpose, glitch_amount );
             }
           },
           fortune: {
@@ -87,8 +88,9 @@ export default class Roller {
             label: game.i18n.localize( 'FitDRoller.Fortune' ),
             callback: async( html ) => {
               const dice_amount = parseInt( html.find( '[name="dice"]' )[0].value );
-              const purpose = html.find( '[name="purpose"]' )[0].value;
-              await this.FitDRoller( "fortune", dice_amount, "", "", purpose );
+              const glitch_amount = parseInt( html.find( '[name="glitch"]' )[0].value );
+			  const purpose = html.find( '[name="purpose"]' )[0].value;
+              await this.FitDRoller( "fortune", dice_amount, "", "", purpose, glitch_amount );
             }
           },
           no: {
@@ -98,7 +100,7 @@ export default class Roller {
         },
         default: "action",
       } ).render( true );
-    } else {
+    } /* else {
       let htmlContent = await renderTemplate( "modules/" + this.moduleName + "/templates/roll-dialog.html", {} );
       // hacky as hell, but using jQuery in the html doesn't change with the setting
       let dice = this.defaultDice > 6 ? 6 : this.defaultDice;
@@ -191,7 +193,7 @@ export default class Roller {
           } )
         }
       } ).render( true );
-    }
+    } */
   }
 
 
@@ -202,6 +204,7 @@ export default class Roller {
    * @param {string} position position
    * @param {string} effect effect
    * @param {string} purpose purpose
+   * @param {int} glitch number of glitch dice
    */
   async FitDRoller( attribute = "", dice_amount = this.defaultDice, position = this.defaultPosition, effect = this.defaultEffect, purpose = "", glitch=this.defaultGlitch ){
     let versionParts;
@@ -313,7 +316,7 @@ export default class Roller {
         effect_localize = 'FitDRoller.EffectStandard';
     }
 
-    const result = await renderTemplate("modules/" + this.moduleName + "/templates/fitd-roll.html", { rolls, roll_status, attribute, position, position_localize, effect, effect_localize, zeromode, color, purpose, glitch_status });
+    const result = await renderTemplate("modules/" + this.moduleName + "/templates/fitd-roll.html", { rolls, roll_status, attribute, position, position_localize, effect, effect_localize, zeromode, color, purpose, glitch_status});
 
     const messageData = {
       speaker,
@@ -410,7 +413,6 @@ export default class Roller {
 
     return roll_status;
   }
-}
 
   /**
    *  Get glitch result of the Roll.
@@ -440,20 +442,15 @@ export default class Roller {
     let use_die;
 	use_die = sorted_rolls[0]; //take worst result
 	
-	switch(use_die){
-		case 1:
-		case 2:
-		case 3:
-			glitch_status = "no-resist";
-			break;
-		case 4:
-		case 5:
-			glitch_status = "resist";
-			break;
-		case 6:
-		default:
-			glitch_status = "";
+	if (use_die <= 3){
+		glitch_status = "no-resist";
+	} else if (use_die === 6){
+		glitch_status = "";
+	} else {
+		glitch_status = "resist";
 	}
-	
     return glitch_status;
   }
+
+}
+
