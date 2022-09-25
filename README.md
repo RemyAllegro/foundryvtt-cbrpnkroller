@@ -1,6 +1,7 @@
 # CBR+PNK Roller
 
 An Unofficial dice roller for CBR+PNK in FoundryVTT, based on code by Megastruktur and drewg13
+mannifest url: https://raw.githubusercontent.com/RemyAllegro/foundryvtt-cbrpnkroller/main/module.json 
 
 ## Usage
 
@@ -25,6 +26,5 @@ There are module settings for controlling:<br>
 
 You can trigger the Dialog using `game.cpnkroller.FitDRollerPopup()`
 
+## Attribution
 Based on concepts from Blades in the Dark (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
-
-mannifest url: https://raw.githubusercontent.com/RemyAllegro/foundryvtt-cbrpnkroller/main/module.json 
