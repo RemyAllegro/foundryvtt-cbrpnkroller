@@ -85,6 +85,10 @@
     </p>
   </div>
   {{/if}}
+  
+  {{#if (glitch_status)}}
+  <div>{{localize "FitDRoller.Glitch"}}</div>
+  {{/if}}
 
   <ol class="dice-rolls">
     {{#each this.rolls}}
