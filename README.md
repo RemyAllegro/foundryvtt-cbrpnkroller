@@ -24,7 +24,7 @@ There are module settings for controlling:<br>
 
 You can now set up macros and skip the popup UI altogether (Thanks to Thune#3566 for this idea and the idea for the entire module!)<br>
 
-`game.fitdroller.FitDRoller("attribute", dice, "position", "effect")<br>`
+`game.cpnkroller.FitDRoller("attribute", dice, "position", "effect")<br>`
 
 `attribute` = can be any string (defaults to "")<br>
 `dice` = total number of dice to roll (defaults to 0)<br>
@@ -33,7 +33,7 @@ You can now set up macros and skip the popup UI altogether (Thanks to Thune#3566
 
 If you want to make a Fortune roll (no position or effect), set the `attribute` to fortune.
 
-You can also trigger the Dialog using `game.fitdroller.FitDRollerPopup()`
+You can also trigger the Dialog using `game.cpnkroller.FitDRollerPopup()`
 
 Based on concepts from Blades in the Dark (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
 

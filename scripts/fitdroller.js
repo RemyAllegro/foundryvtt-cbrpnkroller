@@ -31,7 +31,7 @@ export default class Roller {
                 ${ Array( maxDice + 1 ).fill().map( ( item, i ) => `<option value="${ i }">${ i }d</option>` ).join( '' ) }
               </select>
               <script>
-                $('#dice option[value="' + game.fitdroller.defaultDice + '"]').prop("selected", "selected");
+                $('#dice option[value="' + game.cpnkroller.defaultDice + '"]').prop("selected", "selected");
               </script>
             </div>
             <div class="form-group">
@@ -44,7 +44,7 @@ export default class Roller {
 				<option value="pos4">${ game.i18n.localize( 'FitDRoller.Position4' ) }</option>
               </select>
               <script>
-                $('#pos option[value="' + game.fitdroller.defaultPosition + '"]').prop("selected", "selected");
+                $('#pos option[value="' + game.cpnkroller.defaultPosition + '"]').prop("selected", "selected");
               </script>
             </div>
             <div class="form-group">
@@ -56,7 +56,7 @@ export default class Roller {
                 <option value="great">${ game.i18n.localize( 'FitDRoller.EffectGreat' ) }</option>
                 <option value="extreme">${ game.i18n.localize( 'FitDRoller.EffectExtreme' ) }</option>
               </select>
-              <script>$('#fx option[value="' + game.fitdroller.defaultEffect + '"]').prop("selected", "selected");</script>
+              <script>$('#fx option[value="' + game.cpnkroller.defaultEffect + '"]').prop("selected", "selected");</script>
             </div>
           </form>
         `,
