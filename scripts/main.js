@@ -52,6 +52,16 @@ Hooks.once("init", () => {
     "onChange": function(){ game.cpnkroller = new Roller(); }
   });
 
+  game.settings.register( moduleName, "defaultGlitchDice", {
+    "name": game.i18n.localize("FitDRoller.defaultGlitchDiceName"),
+    "hint": game.i18n.localize("FitDRoller.defaultGlitchDiceHint"),
+    "scope": "world",
+    "config": true,
+    "default": 0,
+    "type": Number,
+    "onChange": function(){ game.cpnkroller = new Roller(); }
+  });
+
   game.settings.register( moduleName, "defaultPosition", {
     "name": game.i18n.localize("FitDRoller.defaultPositionName"),
     "hint": game.i18n.localize("FitDRoller.defaultPositionHint"),

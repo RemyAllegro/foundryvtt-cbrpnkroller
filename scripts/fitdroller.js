@@ -6,6 +6,7 @@ export default class Roller {
   constructor() {
     this.moduleName = "foundryvtt-cbrpnkroller";
     this.defaultDice = game.settings.get( this.moduleName, "defaultDiceCount");
+	this.defaultGlitch = game.settings.get( this.moduleName, "defaultGlitchDice");
     this.defaultPosition = game.settings.get( this.moduleName, "defaultPosition");
     this.defaultEffect = game.settings.get( this.moduleName, "defaultEffect");
   }
@@ -32,6 +33,15 @@ export default class Roller {
               </select>
               <script>
                 $('#dice option[value="' + game.cpnkroller.defaultDice + '"]').prop("selected", "selected");
+              </script>
+            </div>
+			<div class="form-group">
+              <label>${ game.i18n.localize( 'FitDRoller.RollNumberOfGlitchDice' ) }:</label>
+              <select id="glitch" name="glitch">
+                ${ Array( maxDice + 1 ).fill().map( ( item, i ) => `<option value="${ i }">${ i }d</option>` ).join( '' ) }
+              </select>
+              <script>
+                $('#glitch option[value="' + game.cpnkroller.defaultGlitch + '"]').prop("selected", "selected");
               </script>
             </div>
             <div class="form-group">
@@ -193,7 +203,7 @@ export default class Roller {
    * @param {string} effect effect
    * @param {string} purpose purpose
    */
-  async FitDRoller( attribute = "", dice_amount = this.defaultDice, position = this.defaultPosition, effect = this.defaultEffect, purpose = "" ){
+  async FitDRoller( attribute = "", dice_amount = this.defaultDice, position = this.defaultPosition, effect = this.defaultEffect, purpose = "", glitch=this.defaultGlitch ){
     let versionParts;
     if( game.version ) {
       versionParts = game.version.split( '.' );
@@ -216,7 +226,7 @@ export default class Roller {
     } else {
       r.roll();
     }
-    return await this.showChatRollMessage( r, zeromode, attribute, position, effect, purpose );
+    return await this.showChatRollMessage( r, zeromode, attribute, position, effect, purpose, glitch );
   }
 
   /**
@@ -228,8 +238,9 @@ export default class Roller {
    * @param {string} position position
    * @param {string} effect effect
    * @param {string} purpose purpose
+   * @param {int} glitch number of glitch dice
    */
-  async showChatRollMessage(r, zeromode, attribute = "", position = "", effect = "", purpose = "") {
+  async showChatRollMessage(r, zeromode, attribute = "", position = "", effect = "", purpose = "", glitch = 0) {
     let versionParts;
     if( game.version ) {
       versionParts = game.version.split( '.' );
@@ -256,6 +267,10 @@ export default class Roller {
     }
 
     if( effect === "zero" ){ roll_status = "zero"; }
+	
+	// Retrieve glitch result
+	let glitch_status;
+	glitch_status = this.getGlitchStatus(rolls, glitch);
 
     let color = game.settings.get(this.moduleName, "backgroundColor");
 
@@ -298,7 +313,7 @@ export default class Roller {
         effect_localize = 'FitDRoller.EffectStandard';
     }
 
-    const result = await renderTemplate("modules/" + this.moduleName + "/templates/fitd-roll.html", { rolls, roll_status, attribute, position, position_localize, effect, effect_localize, zeromode, color, purpose });
+    const result = await renderTemplate("modules/" + this.moduleName + "/templates/fitd-roll.html", { rolls, roll_status, attribute, position, position_localize, effect, effect_localize, zeromode, color, purpose, glitch_status });
 
     const messageData = {
       speaker,
@@ -396,3 +411,49 @@ export default class Roller {
     return roll_status;
   }
 }
+
+  /**
+   *  Get glitch result of the Roll.
+   *  - no-resist
+   *  - resist
+   *  - empty string signifies no glitch
+   * @param {Array} rolls results of dice rolls
+   * @param {int} glitchDice number of glitch dice
+   * @returns {string} glitch status of roll
+   */
+  getGlitchStatus(rolls, glitchDice = 0) {
+	let glitch_rolls = [];
+	let glitch_status = "";
+	if (glitchDice <= 0){
+		glitch_status = "";
+		return glitch_status;
+	} else if (glitchDice >= rolls.length){
+		glitch_rolls = rolls.slice();
+	} else {
+		glitch_rolls = rolls.slice(-glitchDice); //always look at the last dice for glitches
+	}
+	
+    let sorted_rolls = [];
+    // Sort glitch values from lowest to highest.
+    sorted_rolls = glitch_rolls.map((i) => i.result).sort();
+    
+    let use_die;
+	use_die = sorted_rolls[0]; //take worst result
+	
+	switch(use_die){
+		case 1:
+		case 2:
+		case 3:
+			glitch_status = "no-resist";
+			break;
+		case 4:
+		case 5:
+			glitch_status = "resist";
+			break;
+		case 6:
+		default:
+			glitch_status = "";
+	}
+	
+    return glitch_status;
+  }
