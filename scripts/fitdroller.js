@@ -272,9 +272,17 @@ export default class Roller {
     if( effect === "zero" ){ roll_status = "zero"; }
 	
 	// Retrieve glitch result
+	let glitches = [];
 	let glitch_status;
 	glitch_status = this.getGlitchStatus(rolls, glitch);
-
+	
+	if (glitch > 0){
+		if (glitch > rolls.length){
+			glitch = rolls.length;
+		}
+		glitches = rolls.splice(-glitch);
+	}
+	
     let color = game.settings.get(this.moduleName, "backgroundColor");
 
     let position_localize = '';
@@ -315,8 +323,7 @@ export default class Roller {
       default:
         effect_localize = 'FitDRoller.EffectStandard';
     }
-
-    const result = await renderTemplate("modules/" + this.moduleName + "/templates/fitd-roll.html", { rolls, roll_status, attribute, position, position_localize, effect, effect_localize, zeromode, color, purpose, glitch_status});
+    const result = await renderTemplate("modules/" + this.moduleName + "/templates/fitd-roll.html", { rolls, roll_status, attribute, position, position_localize, effect, effect_localize, zeromode, color, purpose, glitches, glitch_status});
 
     const messageData = {
       speaker,

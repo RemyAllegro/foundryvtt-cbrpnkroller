@@ -1,7 +1,6 @@
 # CBR+PNK Roller
 
-An Unofficial dice roller for CBR+PNK in FoundryVTT, based on code by Megastruktur and drewg13
-
+An unofficial dice roller for CBR+PNK in FoundryVTT, based on code by Megastruktur and drewg13<br>
 mannifest url: https://raw.githubusercontent.com/RemyAllegro/foundryvtt-cbrpnkroller/main/module.json 
 
 ## Usage
