@@ -21,7 +21,7 @@
   "url": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/",
   "manifest": "https://raw.githubusercontent.com/RemyAllegro/foundryvtt-cbrpnkroller/main/module.json",
   "download": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/archive/refs/heads/main.zip",
-  "bugs": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/pulls",
+  "bugs": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/issues",
   "styles": ["styles/fitdroller.css"],
   "esmodules": ["scripts/main.js"],
   "languages": [
