@@ -2,16 +2,16 @@
   "name": "foundryvtt-cbrpnkroller",
   "id": "foundryvtt-cbrpnkroller",
   "title": "CBR+PNK Roller",
-  "description": "Provides a Dice Roller for CBR+PNK by Emanoel Melo",
+  "description": "Provides a Dice Roller for CBR+PNK created by Emanoel Melo and published by Mythopoeia",
   "author": "megastruktur, Andrew Garinger (agaringer#6498), Mestre Digital, Gus, Remy",
   "authors": [
     {"name": "megastruktur"},
     {"name": "Andrew Garinger", "discord": "agaringer#6498"},
     {"name": "Mestre Digital"},
     {"name": "Gus"},
-	{"name": "Remy"}
+    {"name": "Remy"}
   ],
-  "version": "1.6.7.1",
+  "version": "1.6.8",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "9.280",
   "compatibility": {
