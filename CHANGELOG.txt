@@ -35,3 +35,5 @@
 1.6.7  Added glitch dice functionality
 
 1.6.8  Glitch dice now differentiated in css for greater readability
+
+1.6.9  Actual Release
