@@ -37,3 +37,6 @@
 1.6.8  Glitch dice now differentiated in css for greater readability
 
 1.6.9  Actual Release
+
+1.7.0  Verified Compatability with Foundry 10
+

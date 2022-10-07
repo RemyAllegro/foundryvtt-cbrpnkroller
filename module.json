@@ -9,14 +9,14 @@
     {"name": "Andrew Garinger", "discord": "agaringer#6498"},
     {"name": "Mestre Digital"},
     {"name": "Gus"},
-    {"name": "Remy"}
+    {"name": "Remy", "discord":"A_N00B123#3298"}
   ],
-  "version": "1.6.9",
+  "version": "1.7.0",
   "minimumCoreVersion": "0.7.5",
-  "compatibleCoreVersion": "9.280",
+  "compatibleCoreVersion": "10.287",
   "compatibility": {
     "minimum": "0.7.5",
-    "verified": "9.280"
+    "verified": "10"
   },
   "url": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/",
   "manifest": "https://raw.githubusercontent.com/RemyAllegro/foundryvtt-cbrpnkroller/main/module.json",
