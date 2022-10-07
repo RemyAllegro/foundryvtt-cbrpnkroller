@@ -25,5 +25,12 @@ There are module settings for controlling:<br>
 
 You can trigger the Dialog using `game.cpnkroller.FitDRollerPopup()`
 
+You can also call the roller directly with `game.cpnkroller.FitDRoller(attribute,dice_amount,position,effect,purpose,glitch)`
+`attribute` = can be any string (defaults to "")<br>
+`dice` = total number of dice to roll (defaults to 0)<br>
+`position` = accepts integers from 0-4 OR controlled, risky, or desperate (defaults to Threat 2 if you enter anything else)<br>
+`effect` = accepts integers from 0-4 OR great, standard, or limited (defaults to Effect 2 if you enter anything else)<br>
+`glitch` = number of glitchy dice<br>
+
 ## Attribution
 This work is based on [Blades in the Dark](http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for use under the [Creative Commons Attribution 3.0 Unported license](http://creativecommons.org/licenses/by/3.0/).

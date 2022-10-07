@@ -288,18 +288,23 @@ export default class Roller {
     let position_localize = '';
     switch (position){
       case 'pos0':
+	  case 0:
         position_localize = 'FitDRoller.Position0';
         break;
 	  case 'controlled':
+	  case 1:
         position_localize = 'FitDRoller.PositionControlled';
         break;
       case 'desperate':
+	  case 3:
         position_localize = 'FitDRoller.PositionDesperate';
         break;
 	  case 'pos4':
+	  case 4:
         position_localize = 'FitDRoller.Position4';
         break;
       case 'risky':
+	  case 2:
       default:
         position_localize = 'FitDRoller.PositionRisky';
     }
@@ -308,18 +313,23 @@ export default class Roller {
     switch (effect)
     {
       case 'zero':
+	  case 0:
         effect_localize = 'FitDRoller.EffectZero';
         break;
       case 'limited':
+	  case 1:
         effect_localize = 'FitDRoller.EffectLimited';
         break;
       case 'great':
+	  case 3:
         effect_localize = 'FitDRoller.EffectGreat';
         break;
       case 'extreme':
+	  case 4:
         effect_localize = 'FitDRoller.EffectExtreme';
         break;
       case 'standard':
+	  case 2:
       default:
         effect_localize = 'FitDRoller.EffectStandard';
     }
