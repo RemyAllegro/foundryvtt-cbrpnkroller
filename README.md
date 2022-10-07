@@ -23,9 +23,8 @@ There are module settings for controlling:<br>
 
 ## Macro usage
 
-You can trigger the Dialog using `game.cpnkroller.FitDRollerPopup()`
-
-You can also call the roller directly with `game.cpnkroller.FitDRoller(attribute,dice_amount,position,effect,purpose,glitch)`
+You can trigger the Dialog using `game.cpnkroller.FitDRollerPopup()`<br>
+You can also call the roller directly with `game.cpnkroller.FitDRoller(attribute,dice_amount,position,effect,purpose,glitch)`<br>
 `attribute` = can be any string (defaults to "")<br>
 `dice` = total number of dice to roll (defaults to 0)<br>
 `position` = accepts integers from 0-4 OR controlled, risky, or desperate (defaults to Threat 2 if you enter anything else)<br>
