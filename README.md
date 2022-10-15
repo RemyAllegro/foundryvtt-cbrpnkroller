@@ -27,8 +27,8 @@ You can trigger the Dialog using `game.cpnkroller.FitDRollerPopup()`<br>
 You can also call the roller directly with `game.cpnkroller.FitDRoller(attribute,dice_amount,position,effect,purpose,glitch)`<br>
 `attribute` = can be any string (defaults to "")<br>
 `dice` = total number of dice to roll (defaults to 0)<br>
-`position` = accepts integers from 0-4 OR controlled, risky, or desperate (defaults to Threat 2 if you enter anything else)<br>
-`effect` = accepts integers from 0-4 OR great, standard, or limited (defaults to Effect 2 if you enter anything else)<br>
+`position` = accepts integers from 0-4 (defaults to Threat 2 if you enter anything else)<br>
+`effect` = accepts integers from 0-4 (defaults to Effect 2 if you enter anything else)<br>
 `glitch` = number of glitchy dice<br>
 
 ## Attribution
