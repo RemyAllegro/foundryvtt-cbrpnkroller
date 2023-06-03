@@ -40,3 +40,4 @@
 
 1.7.0  Verified Compatability with Foundry 10
 
+1.7.1  Verified Compatability with Foundry 11, and updated attributions

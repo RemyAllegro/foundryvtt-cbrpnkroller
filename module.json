@@ -16,7 +16,7 @@
   "compatibleCoreVersion": "10.287",
   "compatibility": {
     "minimum": "0.7.5",
-    "verified": "10.287"
+    "verified": "11.300"
   },
   "url": "https://github.com/RemyAllegro/foundryvtt-cbrpnkroller/",
   "manifest": "https://raw.githubusercontent.com/RemyAllegro/foundryvtt-cbrpnkroller/main/module.json",

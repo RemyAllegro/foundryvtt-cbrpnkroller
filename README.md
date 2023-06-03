@@ -1,3 +1,5 @@
+![Compatible with CBR+PNK](images/cbrpnk_compatible_fill.png)
+
 # CBR+PNK Roller
 
 An unofficial dice roller for CBR+PNK in FoundryVTT, based on code by Megastruktur and drewg13<br>
@@ -31,5 +33,9 @@ You can also call the roller directly with `game.cpnkroller.FitDRoller(attribute
 `effect` = accepts integers from 0-4 (defaults to Effect 2 if you enter anything else)<br>
 `glitch` = number of glitchy dice<br>
 
-## Attribution
+## Attributions
 This work is based on [Blades in the Dark](http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for use under the [Creative Commons Attribution 3.0 Unported license](http://creativecommons.org/licenses/by/3.0/).
+
+Published independently under the '[CBR+PNK Compatibility License](https://emanoelmelo.itch.io/cbrpnk-toolkit)' with no association with Emanoel Melo, The Cabinet of Curiosities, Mythworks, or other official publishers of CBR+PNK.
+
+'CBR+PNK' and its associated logos and iconography are copyright Emanoel Melo and are used with permission.
