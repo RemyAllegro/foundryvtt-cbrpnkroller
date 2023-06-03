@@ -36,6 +36,6 @@ You can also call the roller directly with `game.cpnkroller.FitDRoller(attribute
 ## Attributions
 This work is based on [Blades in the Dark](http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for use under the [Creative Commons Attribution 3.0 Unported license](http://creativecommons.org/licenses/by/3.0/).
 
-Published independently under the 'CBR+PNK Compatibility License' with no association with Emanoel Melo, The Cabinet of Curiosities, Mythworks, or other official publishers of CBR+PNK.
+Published independently under the '[CBR+PNK Compatibility License](https://emanoelmelo.itch.io/cbrpnk-toolkit)' with no association with Emanoel Melo, The Cabinet of Curiosities, Mythworks, or other official publishers of CBR+PNK.
 
 'CBR+PNK' and its associated logos and iconography are copyright Emanoel Melo and are used with permission.
