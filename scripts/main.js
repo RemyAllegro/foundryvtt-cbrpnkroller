@@ -18,6 +18,12 @@ Hooks.on("renderSceneControls", (app, html) => {
   }
 });
 
+Hooks.on("renderSidebarTab", (app, html, data) => {
+  html.find(".chat-control-icon").click(async (event) => {
+    await game.cpnkroller.FitDRollerPopup();
+  });
+});
+
 Hooks.once("init", () => {
 
   game.settings.register( moduleName, "backgroundColor", {
@@ -38,7 +44,7 @@ Hooks.once("init", () => {
     "hint": game.i18n.localize("FitDRoller.maxDiceCountHint"),
     "scope": "world",
     "config": true,
-    "default": 10,
+    "default": 6,
     "type": Number
   });
 

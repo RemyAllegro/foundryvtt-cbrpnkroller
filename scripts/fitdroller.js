@@ -20,7 +20,8 @@ export default class Roller {
       new Dialog( {
         title: `${ game.i18n.localize( 'FitDRoller.RollTitle' ) }`,
         content: `
-          <h2>${ game.i18n.localize( 'FitDRoller.Roll' ) }</h2>
+        <div class="fitd-dialog">  
+        <h2>${ game.i18n.localize( 'FitDRoller.Roll' ) }</h2>
           <form>
             <div class="form-group">
               <label for="roll-purpose">${game.i18n.localize("FitDRoller.RollPurpose")}:</label>
@@ -69,6 +70,7 @@ export default class Roller {
               <script>$('#fx option[value="' + game.cpnkroller.defaultEffect + '"]').prop("selected", "selected");</script>
             </div>
           </form>
+          </div>
         `,
         buttons: {
           action: {
@@ -99,7 +101,7 @@ export default class Roller {
           },
         },
         default: "action",
-      } ).render( true );
+      } ).render( true , { width: 475} );
     } /* else {
       let htmlContent = await renderTemplate( "modules/" + this.moduleName + "/templates/roll-dialog.html", {} );
       // hacky as hell, but using jQuery in the html doesn't change with the setting
