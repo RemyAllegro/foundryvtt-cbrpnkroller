@@ -1,3 +1,22 @@
+
+@font-face {
+  font-family: '_mono_regular_.';
+  src: url('monoregular-jemar-webfont.woff2') format('woff2'),
+       url('monoregular-jemar-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: '_mono_regular_.';
+  src: url('monobold-z8jg0-webfont.woff2') format('woff2'),
+       url('monobold-z8jg0-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: bold;
+
+}
+
 :root {
 	--almost_white: #eeefff;
 	--red: #ff0000;
@@ -8,6 +27,10 @@
 	--redlt: #ffb2b2;
 	--darkblue: #001324;
 }
+* .fitd-die-tooltip,
+* .fitd-dialog {
+    font-family: '_mono_regular_.', monospace;
+  }
 * .fitd-die-tooltip header {
   margin-bottom: 10px;
 }

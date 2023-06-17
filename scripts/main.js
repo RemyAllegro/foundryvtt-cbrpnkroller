@@ -44,7 +44,7 @@ Hooks.once("init", () => {
     "hint": game.i18n.localize("FitDRoller.maxDiceCountHint"),
     "scope": "world",
     "config": true,
-    "default": 10,
+    "default": 6,
     "type": Number
   });
 
