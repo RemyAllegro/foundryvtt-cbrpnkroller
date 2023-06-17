@@ -18,6 +18,12 @@ Hooks.on("renderSceneControls", (app, html) => {
   }
 });
 
+Hooks.on("renderSidebarTab", (app, html, data) => {
+  html.find(".chat-control-icon").click(async (event) => {
+    await game.cpnkroller.FitDRollerPopup();
+  });
+});
+
 Hooks.once("init", () => {
 
   game.settings.register( moduleName, "backgroundColor", {
