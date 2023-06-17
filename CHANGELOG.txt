@@ -41,3 +41,5 @@
 1.7.0  Verified Compatability with Foundry 10
 
 1.7.1  Verified Compatability with Foundry 11, and updated attributions
+
+1.8.0  Changed to more setting appropriate font

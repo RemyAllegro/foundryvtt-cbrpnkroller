@@ -11,7 +11,7 @@
     {"name": "Gus"},
     {"name": "Remy", "discord":"A_N00B123#3298"}
   ],
-  "version": "1.7.1",
+  "version": "1.8.0",
   "minimumCoreVersion": "0.7.5",
   "compatibleCoreVersion": "10.287",
   "compatibility": {
