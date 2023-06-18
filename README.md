@@ -39,3 +39,5 @@ This work is based on [Blades in the Dark](http://www.bladesinthedark.com/), pro
 Published independently under the '[CBR+PNK Compatibility License](https://emanoelmelo.itch.io/cbrpnk-toolkit)' with no association with Emanoel Melo, The Cabinet of Curiosities, Mythworks, or other official publishers of CBR+PNK.
 
 'CBR+PNK' and its associated logos and iconography are copyright Emanoel Melo and are used with permission.
+
+[Mono font](https://www.fontspace.com/mono-font-f57596) by Rony Setya Siswadi
