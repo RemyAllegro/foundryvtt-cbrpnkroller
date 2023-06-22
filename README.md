@@ -11,6 +11,10 @@ Pick your dice pool, glitch count, threat, and effect, then roll.<br>
 
 OR
 
+Click on the d20 symbol above the chat box
+
+OR
+
 Use the shortcut key to bring up the dialog, set to 'R' by default.
 
 ## Settings
