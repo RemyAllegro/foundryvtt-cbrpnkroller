@@ -6,12 +6,12 @@ export default class Roller {
   constructor() {
     this.moduleName = "foundryvtt-cbrpnkroller";
     this.defaultDice = game.settings.get( this.moduleName, "defaultDiceCount");
-	this.defaultGlitch = game.settings.get( this.moduleName, "defaultGlitchDice");
+	  this.defaultGlitch = game.settings.get( this.moduleName, "defaultGlitchDice");
     this.defaultPosition = game.settings.get( this.moduleName, "defaultPosition");
     this.defaultEffect = game.settings.get( this.moduleName, "defaultEffect");
   }
 
-  async FitDRollerPopup() {
+  async FitDRollerPopup({dice=this.defaultDice, glitch=this.defaultGlitch}={}) {
 
     const maxDice = game.settings.get( this.moduleName, "maxDiceCount" );
     const newInterface = false //game.settings.get( this.moduleName, "newInterface" ); //force disable the new interface
@@ -33,7 +33,7 @@ export default class Roller {
                 ${ Array( maxDice + 1 ).fill().map( ( item, i ) => `<option value="${ i }">${ i }d</option>` ).join( '' ) }
               </select>
               <script>
-                $('#dice option[value="' + game.cpnkroller.defaultDice + '"]').prop("selected", "selected");
+                $('#dice option[value="' + ${dice} + '"]').prop("selected", "selected");
               </script>
             </div>
 			<div class="form-group">
@@ -42,7 +42,7 @@ export default class Roller {
                 ${ Array( maxDice + 1 ).fill().map( ( item, i ) => `<option value="${ i }">${ i }d</option>` ).join( '' ) }
               </select>
               <script>
-                $('#glitch option[value="' + game.cpnkroller.defaultGlitch + '"]').prop("selected", "selected");
+                $('#glitch option[value="' + ${glitch} + '"]').prop("selected", "selected");
               </script>
             </div>
             <div class="form-group">
@@ -78,11 +78,11 @@ export default class Roller {
             label: game.i18n.localize( 'FitDRoller.Action' ),
             callback: async( html ) => {
               const dice_amount = parseInt( html.find( '[name="dice"]' )[0].value );
-			  const glitch_amount = parseInt( html.find( '[name="glitch"]' )[0].value );
+			        const glitch_amount = parseInt( html.find( '[name="glitch"]' )[0].value );
               const position = html.find( '[name="pos"]' )[0].value;
               const effect = html.find( '[name="fx"]' )[0].value;
               const purpose = html.find( '[name="purpose"]' )[0].value;
-              await this.FitDRoller( "", dice_amount, position, effect, purpose, glitch_amount );
+              await this.FitDRoller( {dice_amount:dice_amount, position:position, effect:effect, purpose:purpose, glitch:glitch_amount });
             }
           },
           fortune: {
@@ -91,8 +91,8 @@ export default class Roller {
             callback: async( html ) => {
               const dice_amount = parseInt( html.find( '[name="dice"]' )[0].value );
               const glitch_amount = parseInt( html.find( '[name="glitch"]' )[0].value );
-			  const purpose = html.find( '[name="purpose"]' )[0].value;
-              await this.FitDRoller( "fortune", dice_amount, "", "", purpose, glitch_amount );
+			        const purpose = html.find( '[name="purpose"]' )[0].value;
+              await this.FitDRoller( {attribute:"fortune", dice_amount:dice_amount, purpose:purpose,glitch:glitch_amount });
             }
           },
           no: {
@@ -208,7 +208,7 @@ export default class Roller {
    * @param {string} purpose purpose
    * @param {int} glitch number of glitch dice
    */
-  async FitDRoller( attribute = "", dice_amount = this.defaultDice, position = this.defaultPosition, effect = this.defaultEffect, purpose = "", glitch=this.defaultGlitch ){
+  async FitDRoller({attribute = "", dice_amount = this.defaultDice, position = this.defaultPosition, effect = this.defaultEffect, purpose = "", glitch=this.defaultGlitch} = {} ){
     let versionParts;
     if( game.version ) {
       versionParts = game.version.split( '.' );
