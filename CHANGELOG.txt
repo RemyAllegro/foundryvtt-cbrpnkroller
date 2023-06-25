@@ -43,3 +43,5 @@
 1.7.1  Verified Compatability with Foundry 11, and updated attributions
 
 1.8.0  Changed to more setting appropriate font
+
+1.8.1  Moved to named parameters to improve scripting functionality, can set selected values when calling FitDRollerPopup
