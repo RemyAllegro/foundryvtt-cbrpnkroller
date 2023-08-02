@@ -45,3 +45,5 @@
 1.8.0  Changed to more setting appropriate font
 
 1.8.1  Moved to named parameters to improve scripting functionality, can set selected values when calling FitDRollerPopup
+
+1.8.2  Added ability to prefill purpose box

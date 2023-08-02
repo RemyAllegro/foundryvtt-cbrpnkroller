@@ -29,8 +29,8 @@ There are module settings for controlling:<br>
 
 ## Macro usage
 
-You can trigger the Dialog using `game.cpnkroller.FitDRollerPopup({dice,glitch})`<br>
-Where `dice` and `glitch` set the values initially selected in the dropdown
+You can trigger the Dialog using `game.cpnkroller.FitDRollerPopup({dice,glitch,purpose})`<br>
+Where `dice` and `glitch` set the values initially selected in the dropdown, and `purpose` pre-fills the Roll Purpose text box
 
 You can also call the roller directly with `game.cpnkroller.FitDRoller({attribute,dice_amount,position,effect,purpose,glitch})`<br>
 `attribute` = can be any string (defaults to "")<br>
